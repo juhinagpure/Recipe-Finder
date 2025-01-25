@@ -1,0 +1,18 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #27355a 33.17%, #0f182c 100%);
+  color: white;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/noise.png");
+  background-repeat: repeat;
+  background-position-y: -100px;
+  user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}
