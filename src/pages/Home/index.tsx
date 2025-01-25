@@ -6,9 +6,15 @@ import secondaryRecipe from "./secondary-recipe.json";
 
 const Home = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 items-center text-white py-4">
-      <div className="col-span-2 flex flex-col justify-center">
-        <p className="text-3xl font-medium mb-10">
+    <section className="grid grid-cols-1 md:grid-cols-3 items-center text-white py-4 md:justify-center">
+      <div className="col-span-2 flex flex-col justify-center md:items-center">
+        {/* <p className="text-3xl font-medium mb-10">
+          Discover delicious recipes tailored to your taste buds! <br />
+          From quick snacks to gourmet meals, <br />
+          find inspiration for every occasion.
+        </p> */}
+
+        <p className="text-2xl md:text-3xl font-medium mb-10 text-center">
           Discover delicious recipes tailored to your taste buds! <br />
           From quick snacks to gourmet meals, <br />
           find inspiration for every occasion.
@@ -68,7 +74,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="absolute top-0 right-0 bottom-0 -z-10">
+      <div className="absolute top-0 right-0 bottom-0 -z-10 hidden md:block lg:block">
         <img
           src="/images/image.png"
           alt="Cook & Eat"
