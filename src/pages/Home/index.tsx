@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 items-center text-white py-4">
       <div className="col-span-2 flex flex-col justify-center">
-        <p className="text-xl font-medium mb-8">
+        <p className="text-3xl font-medium mb-10">
           Discover delicious recipes tailored to your taste buds! <br />
           From quick snacks to gourmet meals, <br />
           find inspiration for every occasion.
