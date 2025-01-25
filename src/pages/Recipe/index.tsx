@@ -55,7 +55,9 @@ const Recipe = () => {
         <div className="h-screen"></div>
       </div> */}
 
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5">
+      {/* old */}
+
+      {/* <div className="col-span-1 md:col-span-2 space-y-4 m-5">
         <h2 className="text-2xl font-bold text-primary">Ingredients</h2>
         <div className="grid grid-cols-2 gap-4 border border-transparent p-4">
           {recipe.ingredients.map((ingredient, index) => (
@@ -82,6 +84,34 @@ const Recipe = () => {
         ))}
         <div className="h-screen"></div>
         <div className="h-screen"></div>
+      </div> */}
+
+      {/* new */}
+      <div className="col-span-1 md:col-span-2 space-y-4 m-5">
+        <h2 className="text-2xl font-bold text-primary">Ingredients</h2>
+        <div className="grid grid-cols-2 gap-4 border border-transparent p-4">
+          {recipe.ingredients.map((ingredient, index) => (
+            <label
+              key={index}
+              className="flex items-center space-x-2 text-base text-white"
+            >
+              <input type="radio" name="ingredient" value={ingredient} />
+              <span>{ingredient}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-[-30px]">
+        <h2 className="text-2xl font-bold text-primary mb-4">Instructions</h2>
+        {recipe.instructions.map((instruction, index) => (
+          <div key={index} className="flex items-start gap-4">
+            <span className="text-xl font-bold text-secondary">
+              {index + 1}.
+            </span>
+            <span className="text-base text-white">{instruction}</span>
+          </div>
+        ))}
       </div>
 
       <div className="relative row-start-2 md:col-start-3">
