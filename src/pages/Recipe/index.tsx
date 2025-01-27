@@ -3,11 +3,10 @@ import {
   Clock,
   Flame,
   Globe,
+  HandPlatter,
   Loader,
   MoveLeft,
-  Plane,
   Star,
-  Tag,
   Users,
   Utensils,
 } from "lucide-react";
@@ -58,43 +57,51 @@ const Recipe = () => {
         <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
           Details
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-3">
           <div>
-            <Clock className="inline-block mr-2 text-secondary" />
-            <strong>Prep Time:</strong> {recipe.prepTimeMinutes} minutes
+            <Clock className="inline-block text-secondary" />
+            {recipe.prepTimeMinutes} min
           </div>
           <div>
-            <Utensils className="inline-block mr-2 text-secondary" />
-            <strong>Cook Time:</strong> {recipe.cookTimeMinutes} minutes
+            <Utensils className="inline-block text-secondary" />
+            {recipe.cookTimeMinutes} min
           </div>
           <div>
-            <Users className="inline-block mr-2 text-secondary" />
-            <strong>Servings:</strong> {recipe.servings}
+            <Users className="inline-block text-secondary" />
+            {recipe.servings}
           </div>
           <div>
-            <BarChart className="inline-block mr-2 text-secondary" />
-            <strong>Difficulty:</strong> {recipe.difficulty}
+            <BarChart className="inline-block text-secondary" />
+            {recipe.difficulty}
           </div>
           <div>
-            <Globe className="inline-block mr-2 text-secondary" />
-            <strong>Cuisine:</strong> {recipe.cuisine}
+            <Globe className="inline-block text-secondary" />
+            {recipe.cuisine}
           </div>
           <div>
-            <Flame className="inline-block mr-2 text-secondary" />
-            <strong>Calories:</strong> {recipe.caloriesPerServing} per serving
+            <Flame className="inline-block text-secondary" />
+            {recipe.caloriesPerServing} cal/serving
           </div>
           <div>
-            <Tag className="inline-block mr-2 text-secondary" />
-            <strong>Tags:</strong> {recipe.tags.join(", ")}
+            <HandPlatter className="inline-block text-secondary" />
+            {recipe.mealType.join(", ")}
           </div>
           <div>
-            <Star className="inline-block mr-2 text-secondary " />
-            <strong>Rating:</strong> {recipe.rating} ({recipe.reviewCount}{" "}
-            reviews)
+            <Star className="inline-block text-secondary" />
+            {recipe.rating} ({recipe.reviewCount})
           </div>
-          <div>
-            <Plane className="inline-block mr-2 text-secondary" />
-            <strong>Meal Type:</strong> {recipe.mealType.join(", ")}
+        </div>
+        <div className="mt-11">
+          <h3 className="text-xl font-bold text-primary">Tags</h3>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {recipe.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-sm font-medium bg-transparent text-secondary border border-secondary rounded-lg"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
