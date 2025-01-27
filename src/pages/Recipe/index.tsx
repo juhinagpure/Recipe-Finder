@@ -1,4 +1,16 @@
-import { Loader, MoveLeft } from "lucide-react";
+import {
+  BarChart,
+  Clock,
+  Flame,
+  Globe,
+  Loader,
+  MoveLeft,
+  Plane,
+  Star,
+  Tag,
+  Users,
+  Utensils,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getRecipe } from "../../api";
@@ -48,31 +60,40 @@ const Recipe = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
+            <Clock className="inline-block mr-2 text-secondary" />
             <strong>Prep Time:</strong> {recipe.prepTimeMinutes} minutes
           </div>
           <div>
+            <Utensils className="inline-block mr-2 text-secondary" />
             <strong>Cook Time:</strong> {recipe.cookTimeMinutes} minutes
           </div>
           <div>
+            <Users className="inline-block mr-2 text-secondary" />
             <strong>Servings:</strong> {recipe.servings}
           </div>
           <div>
+            <BarChart className="inline-block mr-2 text-secondary" />
             <strong>Difficulty:</strong> {recipe.difficulty}
           </div>
           <div>
+            <Globe className="inline-block mr-2 text-secondary" />
             <strong>Cuisine:</strong> {recipe.cuisine}
           </div>
           <div>
+            <Flame className="inline-block mr-2 text-secondary" />
             <strong>Calories:</strong> {recipe.caloriesPerServing} per serving
           </div>
           <div>
+            <Tag className="inline-block mr-2 text-secondary" />
             <strong>Tags:</strong> {recipe.tags.join(", ")}
           </div>
           <div>
+            <Star className="inline-block mr-2 text-secondary " />
             <strong>Rating:</strong> {recipe.rating} ({recipe.reviewCount}{" "}
             reviews)
           </div>
           <div>
+            <Plane className="inline-block mr-2 text-secondary" />
             <strong>Meal Type:</strong> {recipe.mealType.join(", ")}
           </div>
         </div>
