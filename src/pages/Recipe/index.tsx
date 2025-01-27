@@ -45,7 +45,7 @@ const Recipe = () => {
 
   if (!recipe) return <div className="m-auto italic">Recipe not found</div>;
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 relative py-4 gap-5">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative py-4 gap-5">
       <div className="col-span-full">
         <Link to={`/recipes`} className="flex items-center gap-2">
           <MoveLeft size={16} className="leading-1.5" />
@@ -53,91 +53,90 @@ const Recipe = () => {
         </Link>
       </div>
 
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-28">
-        <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
-          Details
+      <div className="col-span-1 md:col-span-2 lg:col-span-2 space-y-4 m-5 ">
+        <h2 className="text-xl md:text-3xl font-bold text-primary">
+          {recipe.name}
         </h2>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="flex flex-wrap gap-2 mt-2">
+          {recipe.tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 text-sm font-medium bg-transparent text-secondary border border-secondary rounded-lg"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="grid grid-cols-2  md:grid-cols-3 gap-3 text-sm md:text-base">
           <div>
-            <Clock className="inline-block text-secondary" />
+            <Clock size={14} className="inline-block text-secondary mr-2" />
             {recipe.prepTimeMinutes} min
           </div>
           <div>
-            <Utensils className="inline-block text-secondary" />
+            <Utensils size={14} className="inline-block text-secondary mr-2" />
             {recipe.cookTimeMinutes} min
           </div>
           <div>
-            <Users className="inline-block text-secondary" />
+            <Users size={14} className="inline-block text-secondary mr-2" />
             {recipe.servings}
           </div>
           <div>
-            <BarChart className="inline-block text-secondary" />
+            <BarChart size={14} className="inline-block text-secondary mr-2" />
             {recipe.difficulty}
           </div>
           <div>
-            <Globe className="inline-block text-secondary" />
+            <Globe size={14} className="inline-block text-secondary mr-2" />
             {recipe.cuisine}
           </div>
           <div>
-            <Flame className="inline-block text-secondary" />
+            <Flame size={14} className="inline-block text-secondary mr-2" />
             {recipe.caloriesPerServing} cal/serving
           </div>
           <div>
-            <HandPlatter className="inline-block text-secondary" />
+            <HandPlatter
+              size={14}
+              className="inline-block text-secondary mr-2"
+            />
             {recipe.mealType.join(", ")}
           </div>
           <div>
-            <Star className="inline-block text-secondary" />
+            <Star size={14} className="inline-block text-secondary mr-2" />
             {recipe.rating} ({recipe.reviewCount})
           </div>
         </div>
-        <div className="mt-11">
-          <h3 className="text-xl font-bold text-primary">Tags</h3>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {recipe.tags.map((tag, index) => (
-              <span
+        <div className="my-4 mt-11">
+          <h2 className=" text-lg md:text-3xl font-medium text-primary mb-2">
+            Ingredients
+          </h2>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 p-4 list-disc">
+            {recipe.ingredients.map((ingredient, index) => (
+              <li
                 key={index}
-                className="px-3 py-1 text-sm font-medium bg-transparent text-secondary border border-secondary rounded-lg"
+                className="flex items-center space-x-2 text-sm md:text-base text-white"
               >
-                {tag}
-              </span>
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-11">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 space-y-4 ">
+            <h2 className="text-lg md:text-3xl font-semibold text-primary mb-4">
+              Instructions
+            </h2>
+            {recipe.instructions.map((instruction, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <span className="text-xl font-bold text-secondary">
+                  {index + 1}.
+                </span>
+                <span className="text-base text-white">{instruction}</span>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5">
-        <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
-          Ingredients
-        </h2>
-        <div className="grid grid-cols-2 gap-4 border border-transparent p-4">
-          {recipe.ingredients.map((ingredient, index) => (
-            <label
-              key={index}
-              className="flex items-center space-x-2 text-base text-white"
-            >
-              <input type="radio" name="ingredient" value={ingredient} />
-              <span>{ingredient}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5 ">
-        <h2 className="text-2xl font-bold text-primary mb-4 underline decoration-white-500">
-          Instructions
-        </h2>
-        {recipe.instructions.map((instruction, index) => (
-          <div key={index} className="flex items-start gap-4">
-            <span className="text-xl font-bold text-secondary">
-              {index + 1}.
-            </span>
-            <span className="text-base text-white">{instruction}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="relative row-start-2 md:col-start-3">
+      <div className="relative row-start-2 md:col-start-3 lg:col-start-3">
         <img
           className="rounded-full shadow-[8px_8px_10px_0px_black]"
           src={recipe.image}

@@ -6,7 +6,7 @@ import { ROUTES } from "./routes";
 function App() {
   return (
     <BrowserRouter>
-      <div className="px-8 md:px-16 lg:px-24 min-h-svh grid grid-rows-[auto_1fr] gap-5">
+      <div className="px-4 md:px-12 lg:px-20 min-h-svh grid grid-rows-[auto_1fr] gap-5">
         <Header />
 
         <Routes>
