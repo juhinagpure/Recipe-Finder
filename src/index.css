@@ -63,3 +63,10 @@
     @apply text-white/50;
   }
 }
+.section {
+  margin-bottom: 8px; /* Reduce margin between sections */
+}
+
+.grid > div {
+  gap: 8px; /* Reduce grid gap */
+}

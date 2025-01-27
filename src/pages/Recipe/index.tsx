@@ -42,53 +42,46 @@ const Recipe = () => {
         </Link>
       </div>
 
-      {/* <div className="col-span-1 md:col-span-2">
-        {recipe.instructions.map((instruction, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-secondary">
-              {index + 1}.
-            </span>
-            <span>{instruction}</span>
-          </div>
-        ))}
-        <div className="h-screen"></div>
-        <div className="h-screen"></div>
-      </div> */}
-
-      {/* old */}
-
-      {/* <div className="col-span-1 md:col-span-2 space-y-4 m-5">
-        <h2 className="text-2xl font-bold text-primary">Ingredients</h2>
-        <div className="grid grid-cols-2 gap-4 border border-transparent p-4">
-          {recipe.ingredients.map((ingredient, index) => (
-            <label
-              key={index}
-              className="flex items-center space-x-2 text-base text-white"
-            >
-              <input type="radio" name="ingredient" value={ingredient} />
-              <span>{ingredient}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-[-30px]">
-        <h2 className="text-2xl font-bold text-primary mb-4">Instructions</h2>
-        {recipe.instructions.map((instruction, index) => (
-          <div key={index} className="flex items-start gap-4">
-            <span className="text-xl font-bold text-secondary">
-              {index + 1}.
-            </span>
-            <span className="text-base text-white">{instruction}</span>
-          </div>
-        ))}
-        <div className="h-screen"></div>
-        <div className="h-screen"></div>
-      </div> */}
-
-      {/* new */}
       <div className="col-span-1 md:col-span-2 space-y-4 m-5">
-        <h2 className="text-2xl font-bold text-primary">Ingredients</h2>
+        <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
+          Details
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <strong>Prep Time:</strong> {recipe.prepTimeMinutes} minutes
+          </div>
+          <div>
+            <strong>Cook Time:</strong> {recipe.cookTimeMinutes} minutes
+          </div>
+          <div>
+            <strong>Servings:</strong> {recipe.servings}
+          </div>
+          <div>
+            <strong>Difficulty:</strong> {recipe.difficulty}
+          </div>
+          <div>
+            <strong>Cuisine:</strong> {recipe.cuisine}
+          </div>
+          <div>
+            <strong>Calories:</strong> {recipe.caloriesPerServing} per serving
+          </div>
+          <div>
+            <strong>Tags:</strong> {recipe.tags.join(", ")}
+          </div>
+          <div>
+            <strong>Rating:</strong> {recipe.rating} ({recipe.reviewCount}{" "}
+            reviews)
+          </div>
+          <div>
+            <strong>Meal Type:</strong> {recipe.mealType.join(", ")}
+          </div>
+        </div>
+      </div>
+
+      <div className="col-span-1 md:col-span-2 space-y-4 m-5">
+        <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
+          Ingredients
+        </h2>
         <div className="grid grid-cols-2 gap-4 border border-transparent p-4">
           {recipe.ingredients.map((ingredient, index) => (
             <label
@@ -103,7 +96,9 @@ const Recipe = () => {
       </div>
 
       <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-[-30px]">
-        <h2 className="text-2xl font-bold text-primary mb-4">Instructions</h2>
+        <h2 className="text-2xl font-bold text-primary mb-4 underline decoration-white-500">
+          Instructions
+        </h2>
         {recipe.instructions.map((instruction, index) => (
           <div key={index} className="flex items-start gap-4">
             <span className="text-xl font-bold text-secondary">
