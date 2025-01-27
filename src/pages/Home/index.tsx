@@ -14,7 +14,7 @@ const Home = () => {
           find inspiration for every occasion.
         </p> */}
 
-        <p className="text-2xl md:text-3xl font-medium mb-10 text-center">
+        <p className="text-2xl md:text-3xl font-medium mb-10">
           Discover delicious recipes tailored to your taste buds! <br />
           From quick snacks to gourmet meals, <br />
           find inspiration for every occasion.
