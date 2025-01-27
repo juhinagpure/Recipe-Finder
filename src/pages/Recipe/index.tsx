@@ -42,7 +42,7 @@ const Recipe = () => {
         </Link>
       </div>
 
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5">
+      <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-28">
         <h2 className="text-2xl font-bold text-primary underline decoration-white-500">
           Details
         </h2>
@@ -95,7 +95,7 @@ const Recipe = () => {
         </div>
       </div>
 
-      <div className="col-span-1 md:col-span-2 space-y-4 m-5 mt-[-30px]">
+      <div className="col-span-1 md:col-span-2 space-y-4 m-5 ">
         <h2 className="text-2xl font-bold text-primary mb-4 underline decoration-white-500">
           Instructions
         </h2>
