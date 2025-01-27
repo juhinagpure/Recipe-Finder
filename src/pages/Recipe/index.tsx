@@ -57,7 +57,7 @@ const Recipe = () => {
         <h2 className="text-xl md:text-3xl font-bold text-primary">
           {recipe.name}
         </h2>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2 mb-8">
           {recipe.tags.map((tag, index) => (
             <span
               key={index}
@@ -104,24 +104,24 @@ const Recipe = () => {
             {recipe.rating} ({recipe.reviewCount})
           </div>
         </div>
-        <div className="my-4 mt-11">
-          <h2 className=" text-lg md:text-3xl font-medium text-primary mb-2">
+        <div className="my-4 mt-8 bg-card-horizontal py-6">
+          <h2 className=" text-lg md:text-xl font-medium text-primary mb-2">
             Ingredients
           </h2>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 p-4 list-disc">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-4 list-disc ">
             {recipe.ingredients.map((ingredient, index) => (
               <li
                 key={index}
-                className="flex items-center space-x-2 text-sm md:text-base text-white"
+                className="list-item space-x-2 text-sm md:text-base text-white "
               >
                 {ingredient}
               </li>
             ))}
           </ul>
         </div>
-        <div className="mt-11">
+        <div className="mt-8">
           <div className="col-span-1 md:col-span-2 lg:col-span-2 space-y-4 ">
-            <h2 className="text-lg md:text-3xl font-semibold text-primary mb-4">
+            <h2 className="text-lg md:text-xl font-medium text-primary mb-4">
               Instructions
             </h2>
             {recipe.instructions.map((instruction, index) => (
@@ -129,7 +129,9 @@ const Recipe = () => {
                 <span className="text-xl font-bold text-secondary">
                   {index + 1}.
                 </span>
-                <span className="text-base text-white">{instruction}</span>
+                <span className="md:text-base text-white text-sm">
+                  {instruction}
+                </span>
               </div>
             ))}
           </div>
